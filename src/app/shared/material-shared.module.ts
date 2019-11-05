@@ -10,7 +10,6 @@ import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform
 
 @NgModule({
     exports: [
-        BrowserAnimationsModule,
         MatCardModule,
         MatGridListModule,
         MatButtonModule,
