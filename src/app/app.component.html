@@ -1,28 +1,37 @@
 <mat-toolbar color="primary" class="flex-container">
   <div>
     <span>Roomy</span>
-    <a mat-button>
+    <a [routerLink]="['/home']" mat-button>
       <mat-icon>home</mat-icon>
       Accueil
     </a>
-    <a mat-button>
+    <a routerLink="/rooms/list" mat-button>
       <mat-icon>room</mat-icon>
       Salles
     </a>
-    <a mat-button>
+    <a routerLink="/rooms/add" mat-button>
       <mat-icon>add</mat-icon>
       Ajouter
     </a>
   </div>
   <div>
-    <a mat-button>
+    <a mat-button *ngIf="user === null; else logout">
       <mat-icon>locked_out</mat-icon>
       Se connecter
     </a>
+    <ng-template #logout>
+      <div>
+        Bonjour {{user.name}}
+        <a mat-button>
+          <mat-icon>locked_in</mat-icon>
+          Se déconnecter
+        </a>
+      </div>
+    </ng-template>
   </div>
 </mat-toolbar>
 
-content
+<router-outlet></router-outlet>
 
 <footer>
   <app-top-five></app-top-five>
