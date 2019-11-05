@@ -1,12 +1,12 @@
 <!--<h2 [textContent]="title"></h2>-->
-<h2>TOP {{rooms.length}}</h2>
+<h2>TOP {{rooms?.length}}</h2>
 <mat-grid-list cols="5">
     <mat-grid-tile *ngFor="let room of rooms">
         <mat-card>
             <mat-card-header>
                 <mat-card-title>{{room.name}}</mat-card-title>
             </mat-card-header>
-            <img mat-card-image src="/assets/images/{{room.image}}" alt="{{room.name}}">
+            <img mat-card-image src="/assets/images/{{room?.image}}" alt="{{room?.name}}">
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>

@@ -7,6 +7,7 @@ import { MaterialSharedModule } from './shared/material-shared.module';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { RoomSharedModule } from './modules/room/room-shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RoomService } from './services/room.service';
 
 @NgModule({
   declarations: [
