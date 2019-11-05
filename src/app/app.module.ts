@@ -8,6 +8,7 @@ import { AuthenticationModule } from './modules/authentication/authentication.mo
 import { RoomSharedModule } from './modules/room/room-shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoomService } from './services/room.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RoomService } from './services/room.service';
     MaterialSharedModule,
     HomeModule,
     RoomSharedModule,
-    AuthenticationModule
+    AuthenticationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
