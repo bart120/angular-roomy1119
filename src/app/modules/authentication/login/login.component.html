@@ -1,0 +1,12 @@
+<h2>Authentification</h2>
+<form class="form">
+    <mat-form-field>
+        <input matInput placeholder="Login" #email (keyup.enter)="password.focus()">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Mot de passe" type="password" #password (keyup.enter)="onBtnClick(email.value)">
+    </mat-form-field>
+    <div>
+        <button mat-button type="button" (click)="onBtnClick(email.value)">Se connecter</button>
+    </div>
+</form>

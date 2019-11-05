@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'roomy1119';
-  user: any = null;
+  user: any = {};
+
+  onLogout(): void {
+    this.user = null;
+  }
 
 }

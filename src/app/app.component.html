@@ -15,17 +15,17 @@
     </a>
   </div>
   <div>
-    <a mat-button *ngIf="user === null; else logout">
+    <a routerLink="/login" mat-button *ngIf="user === null; else logout">
       <mat-icon>locked_out</mat-icon>
       Se connecter
     </a>
     <ng-template #logout>
       <div>
         Bonjour {{user.name}}
-        <a mat-button>
+        <button mat-button (click)="onLogout()">
           <mat-icon>locked_in</mat-icon>
           Se déconnecter
-        </a>
+        </button>
       </div>
     </ng-template>
   </div>
