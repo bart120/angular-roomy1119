@@ -8,7 +8,8 @@ import { AuthenticationModule } from './modules/authentication/authentication.mo
 import { RoomSharedModule } from './modules/room/room-shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoomService } from './services/room.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     AuthenticationModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
