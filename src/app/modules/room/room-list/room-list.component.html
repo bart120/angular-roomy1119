@@ -1,1 +1,22 @@
-<p>room-list works!</p>
+<h2>Les salles</h2>
+
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Prix</th>
+        <th>Places</th>
+    </tr>
+    <tr *ngFor="let room of rooms">
+        <td>{{room.name | uppercase}}</td>
+        <td>{{room.price}}</td>
+        <td>{{room.seatCount}}</td>
+        <td>
+            <a [routerLink]="['/rooms/detail', room.id]" mat-button>
+                <mat-icon>search</mat-icon>
+            </a>
+        </td>
+    </tr>
+</table>
+<div>
+    {{rooms | json}}
+</div>

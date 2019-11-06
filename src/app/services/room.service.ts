@@ -36,4 +36,14 @@ export class RoomService {
         // console.log('fin gettopfive');
         // return null;
     }
+
+    getAll(): Observable<Array<Room>> {
+        return this.http.get<Array<Room>>(environment.url_rooms).pipe(
+            map(data => data.sort((a, b) => a.name < b.name ? 0 : 1))
+        );
+    }
+
+    getRoomById(id: number): Observable<Room> {
+        return this.http.get<Room>(`${environment.url_rooms}/${id}`);
+    }
 }
