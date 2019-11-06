@@ -6,6 +6,7 @@ import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { MaterialSharedModule } from 'src/app/shared/material-shared.module';
 import { RoomRoutingModule } from './room-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthenticationGuard } from 'src/app/guards/authentication.guard';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RoomRoutingModule,
     MaterialSharedModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers: []
 })
 export class RoomModule { }
