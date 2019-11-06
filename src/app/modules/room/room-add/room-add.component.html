@@ -1,2 +1,24 @@
-<p>room-add works!</p>
-<button mat-button>Enregistrer</button>
+<h2>Ajouter une salle</h2>
+<form class="form" [formGroup]="formRoom" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input type="text" matInput placeholder="Nom" formControlName="name" required>
+        <mat-error>Le nom est obligatoire</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="number" matInput placeholder="Prix" formControlName="price" required>
+        <mat-error>Le prix doit être positif</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="number" matInput placeholder="Places" formControlName="seatCount">
+        <mat-error>Le nombre doit être un entier</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="Images" formControlName="image">
+            <mat-option *ngFor="let p of pictures" [value]="p.id">{{p.image}}</mat-option>
+        </mat-select>
+        <mat-error>L'image est obligatoire</mat-error>
+    </mat-form-field>
+    <div>
+        <button mat-button>Enregistrer</button>
+    </div>
+</form>

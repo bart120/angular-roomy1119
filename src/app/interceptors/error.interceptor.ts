@@ -11,8 +11,9 @@ export class ErrorInterceptor implements HttpInterceptor {
     constructor(private router: Router, private snack: MatSnackBar) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
         // avant l'envoie
-        // jwt
+        // jwt...
 
         return next.handle(req).pipe(
             catchError(err => {

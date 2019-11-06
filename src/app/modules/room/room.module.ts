@@ -5,6 +5,7 @@ import { RoomAddComponent } from './room-add/room-add.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { MaterialSharedModule } from 'src/app/shared/material-shared.module';
 import { RoomRoutingModule } from './room-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { RoomRoutingModule } from './room-routing.module';
   imports: [
     CommonModule,
     RoomRoutingModule,
-    MaterialSharedModule
+    MaterialSharedModule,
+    ReactiveFormsModule
   ]
 })
 export class RoomModule { }

@@ -46,4 +46,8 @@ export class RoomService {
     getRoomById(id: number): Observable<Room> {
         return this.http.get<Room>(`${environment.url_rooms}/${id}`);
     }
+
+    insertRoom(room: Room): Observable<Room> {
+        return this.http.post<Room>(environment.url_rooms, room);
+    }
 }
