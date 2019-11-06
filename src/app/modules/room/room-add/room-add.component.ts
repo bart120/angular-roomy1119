@@ -31,9 +31,11 @@ export class RoomAddComponent implements OnInit {
     // console.log(this.formRoom);
 
     this.serv.getRoomById(3314).subscribe(data => {
-      // const r = ({ name, ...remaining } = data);
 
-      // this.formRoom.setValue({ name: data.name });
+      // this.formRoom.setValue({ name: data.name, seatCount: data.seatCount, price: data.price, image: data.image });
+
+      // const { id, ...rest } = data;
+      // this.formRoom.setValue(rest);
     });
   }
 
